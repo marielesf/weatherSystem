@@ -8,9 +8,10 @@ This example will allow us to see your development for a simple fullstack app.
 
 You can use [Spring Initializr][SpringInitializr] to kick-start, or do directly here. The dependencies are free of choice, use those you like, know best.
 After created, your service must have a URI that shows it is running, like `/health`, and other to display arbitrary application info, like `/info`
-´´´
+
+ˋˋˋ
 http://localhost:8080/health
-´´´
+ˋˋˋ
 
 ### 2. Integrate OpenWeatherMap and make it operational
 
@@ -18,14 +19,14 @@ You will use OpenWeatherMaps to complete this service, so take a time to make yo
 Go to [OpenWeatherMaps][OpenWeather] for this. We also recomend you to check carefully the documentation there.
 
 Your goal is to have an endpoint `GET /weather` that accepts the parameter `city` and return weather data to that city, with details like (condition, temperature, atmospheric pressure, etc). All that through HTTP requests made to OpenWeatherMaps.
-´´´
+ˋˋˋ
 EX. Request http://localhost:8080/weather/lisboa
-´´´
+ˋˋˋ
 
 Other good feature to have is a call retrieving several nearby cities weather, OpenWeatherAPI provides a way of getting that by geographic coordinates: [Cities in circle][citycircle]. You can identify this other endpoint as `GET /find`.
-´´´
+ˋˋˋ
 EX. Request http://localhost:8080/find?lon=-9.1333&lat=38.7167
-´´´
+ˋˋˋ
 
 #### 2.1. Provide a frontend for users may have a better UI/UX, should be a simple SPA
 
@@ -46,7 +47,7 @@ So, implement Spring security strategy to use an API key you'll set and share wi
 How can we test these calls?
 Document, explain how to clients will connect. May you use a library to make your service self testable and well documented?
 
-´´´
+ˋˋˋ
 http://localhost:8080/swagger-ui.html
-´´´
+ˋˋˋ
 
