@@ -1,0 +1,14 @@
+  <h3 class="text-center">City</h3>
+  <form [formGroup]="weatherSearchForm" (ngSubmit)="getTemperature(weatherSearchForm.value)">
+    
+    <div class="form-group input-group mb-3">
+      <input id="weatherLocation" type="text" class="form-control" placeholder="Please input a city" aria-describedby="weatherLocation" formControlName="location">
+      <div class="input-group-append">
+        <button class="btn btn-primary btn-md" type="submit" id="button-searchCity">Search</button>
+      </div>
+    </div>
+    <div class="alert-success">
+      <h3 class="text-center">Weather Details:</h3>
+      <p class="text-center">Temperature: {{this.weatherData?.temperature}} - Condition: {{this.weatherData?.condition}} -  Pressure: {{this.weatherData?.pressure}}</p>
+    </div>
+  </form>

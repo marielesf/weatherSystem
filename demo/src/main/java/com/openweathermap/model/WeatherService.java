@@ -31,9 +31,9 @@ public class WeatherService {
         return weather;
     }
 
-    public List<Weather> getCitiesCircle(double lat, double lon){
+    public List<Weather> getCitiesCircle(double lat, double lon, int qtdCities){
         List<Weather> list = new ArrayList<>();
-        String uri = "http://api.openweathermap.org/data/2.5/find?lat="+lat+"&lon="+lon+"&appid=" + apiKey;
+        String uri = "http://api.openweathermap.org/data/2.5/find?lat="+lat+"&lon="+lon+"&cnt=" +qtdCities+ "&appid="+ apiKey;
         JsonNode weatherJson = rest.getForObject(uri, JsonNode.class);
         Iterator ite = weatherJson.get("list").iterator();
         while (ite.hasNext()){

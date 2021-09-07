@@ -1,0 +1,23 @@
+  <h3 class="text-center">Coordinates</h3>
+  <form [formGroup]="CoordinatesSearchForm" (ngSubmit)="getTemperature(CoordinatesSearchForm.value)">
+    <div class="form-group input-group mb-3">
+        <input class="form-control" type="text" id="lat" 
+          placeholder="Latitude" formControlName="lat" />
+          <input class="form-control" type="text" id="lon" 
+          placeholder="Longitude" formControlName="lon" />
+      
+      <input id="numberCities" type="number" class="form-control" placeholder="Number cities" formControlName="qtdCities" min="0">
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-md">Search </button>
+      </div>
+    </div>
+    <div class="alert-success">
+      <h3 class="text-center">Weather Details:</h3>
+      <p class="text-center">Current weather Temperature: {{this.weatherData[0].temperature}}</p>
+    </div>
+    <h5 class="text-center">Next Cities:</h5>
+    <li *ngFor="let city of this.weatherData.slice(1); index as i">
+      <label for="basic-url">Cidade -> {{city.nameCity}}</label>
+      <label for="basic-url"> - Temperatura: {{city.temperature}}</label>
+    </li>
+  </form>
